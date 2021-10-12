@@ -7,9 +7,7 @@
 - Giffari Agza Fahlevi    (24060119140082)
 
 # Installing tutorial
-#### This tutorial was originally created by M Naufal Pratama  
-
-<br>
+This tutorial was originally created by M Naufal Pratama  
 
 ## Prerequisites
 
