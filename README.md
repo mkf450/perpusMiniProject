@@ -6,8 +6,8 @@
 - Rashif Dhafin Fairiza   (24060119140079)
 - Giffari Agza Fahlevi    (24060119140082)
 
-### Installing tutorial
-##### This tutorial was originally created by M.Naufal Pratama  
+# Installing tutorial
+### This tutorial was originally created by M Naufal Pratama  
 
 #### 1. Clone
 ```
@@ -31,7 +31,7 @@ cp .env.example .env
 Edit the configuration inside .env, for
 - DB_HOST=127.0.0.1
 - DB_PORT=3306
-- DB_DATABASE=anforcom
+- DB_DATABASE=miniprojectperpus
 
 change the DB_DATABASE value into anything that you want and it will be the name of your database
 #### 5. Generate key
