@@ -51,7 +51,7 @@ Edit the configuration inside .env, for
 - DB_PORT=3306
 - DB_DATABASE=miniprojectperpus
 
-In the example above we create database named anforcom which runs on Localhost (127.0.0.1) on port 3306
+In the example above we create database named miniprojectperpus which runs on Localhost (127.0.0.1) on port 3306
 
 ##### 5. Generate key
 ```
