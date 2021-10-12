@@ -7,11 +7,11 @@
 - Giffari Agza Fahlevi    (24060119140082)
 
 # Installing tutorial
-### This tutorial was originally created by M Naufal Pratama  
+#### This tutorial was originally created by M Naufal Pratama  
 
 <br>
 
-#### Prerequisites
+## Prerequisites
 
 Download composer for managing PHP dependencies (which Laravel is PHP) in here
 
@@ -19,13 +19,13 @@ Download composer for managing PHP dependencies (which Laravel is PHP) in here
 https://getcomposer.org/Composer-Setup.exe
 ```
 
-after installed, check it by using commandline and type
+<br>after installed, check it by using commandline and type
 
 ```
 composer
 ```
 
-if you're not getting any error message and composer shows it version, than it's completely installed
+<br>if you're not getting any error message and composer shows it version, than it's completely installed
 
 #### 1. Clone
 ```
