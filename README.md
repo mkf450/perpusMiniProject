@@ -33,8 +33,9 @@ Edit the configuration inside .env, for
 - DB_PORT=3306
 - DB_DATABASE=miniprojectperpus
 
-change the DB_DATABASE value into anything that you want and it will be the name of your database
-#### 5. Generate key
+In the example above we create database named anforcom which runs on Localhost (127.0.0.1) on port 3306
+
+##### 5. Generate key
 ```
 php artisan key:generate
 ```
