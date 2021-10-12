@@ -27,6 +27,8 @@ composer
 
 <br>if you're not getting any error message and composer shows it version, than it's completely installed
 
+<br>
+
 #### 1. Clone
 ```
 git clone https://github.com/mkf450/perpusMiniProject.git
