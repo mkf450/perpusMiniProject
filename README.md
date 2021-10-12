@@ -23,7 +23,7 @@ https://getcomposer.org/Composer-Setup.exe
 composer
 ```
 
-<br>if you're not getting any error message and composer shows it version, than it's completely installed
+<br>if you're not getting any error message and composer shows its version, than it's completely installed
 
 <br>
 
