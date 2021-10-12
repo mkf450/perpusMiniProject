@@ -9,6 +9,24 @@
 # Installing tutorial
 ### This tutorial was originally created by M Naufal Pratama  
 
+<br>
+
+#### Prerequisites
+
+Download composer for managing PHP dependencies (which Laravel is PHP) in here
+
+```
+https://getcomposer.org/Composer-Setup.exe
+```
+
+after installed, check it by using commandline and type
+
+```
+composer
+```
+
+if you're not getting any error message and composer shows it version, than it's completely installed
+
 #### 1. Clone
 ```
 git clone https://github.com/mkf450/perpusMiniProject.git
