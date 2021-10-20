@@ -1,4 +1,4 @@
-@include('header')
+@include('header2')
 <div class="card-header">Tambah Kategori Buku</div>
   <div class="card-body">
     <form action="{{ route('add_category') }}"  autocomplete="on" method="post">
@@ -42,4 +42,4 @@
 
     </form>
   </div>
-@include('footer')
+@include('footer2')

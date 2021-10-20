@@ -1,4 +1,4 @@
-@include('header')
+@include('header2')
 <div class="card-header">Hapus Data Buku</div>
   <div class="card-body">
     <form action="{{ route('delete_books', $buku->idbuku) }}"  autocomplete="on" method="post">
@@ -43,4 +43,4 @@
 
     </form>
   </div>
-@include('footer')
+@include('footer2')

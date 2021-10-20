@@ -1,5 +1,3 @@
-            </div>
-          </div>
         </div>
       </div>
     <!-- JavaScript Bundle with Popper -->

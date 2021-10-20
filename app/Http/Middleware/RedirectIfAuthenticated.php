@@ -25,6 +25,19 @@ class RedirectIfAuthenticated
             if (Auth::guard($guard)->check()) {
                 return redirect(RouteServiceProvider::HOME);
             }
+
+            /** @var User $user */
+            $user = Auth::guard($guard);
+
+            // to admin dashboard
+            if($user->hasRole('petugas')) {
+              return redirect(route('petugas_dashboard'));
+            }
+
+            // to user dashboard
+            else if($user->hasRole('anggota')) {
+              return redirect(route('anggota_dashboard'));
+            }
         }
 
         return $next($request);

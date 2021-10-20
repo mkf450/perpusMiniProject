@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class detail_transaksi extends Model
 {
+  protected $table = 'detail_transaksi';
   public $timestamps = false;
   use HasFactory;
 }

@@ -27,8 +27,9 @@ class BukuController extends Controller
   public function tambah(Request $request)
   {
       $rules = [
-        'isbn'                    => 'min:13|max:13',
-        'pengarang'               => 'string',
+        'isbn'                  => 'min:13|max:13',
+        'pengarang'             => 'string',
+        'gambar'                => 'image|mimes:jpg,png,jpeg,gif,svg',
       ];
 
       $messages = [
@@ -52,7 +53,7 @@ class BukuController extends Controller
       $book->penerbit       =  $request->penerbit;
       $book->kota_penerbit  =  $request->kota;
       $book->editor         =  $request->editor;
-      $book->file_gambar    =  $request->image;
+      $book->file_gambar    =  $request->file('gambar')->store('public/images');
       $book->tgl_insert     =  now();
       $book->tgl_update     =  now();
       $book->stok           =  $request->stok;

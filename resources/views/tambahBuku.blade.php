@@ -1,7 +1,7 @@
-@include('header')
+@include('header2')
 <div class="card-header">Tambah Data Buku</div>
   <div class="card-body">
-    <form action="{{ route('add_books') }}"  autocomplete="on" method="post">
+    <form action="{{ route('add_books') }}"  autocomplete="on" enctype="multipart/form-data" method="post">
       @csrf
 			@if(session('errors'))
 			<div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -45,6 +45,7 @@
           <label for="password" class="col-sm-2 col-form-label">Kategori : </label>
           <div class="col-sm-10">
             <select style="color: #707070" name="kategori" class="form-control">
+              <option value="">-- Pick a category --</option>
               @foreach( $kategori as $category )
               <option value="{{ $category->idkategori }}">{{ $category->nama }}</option>
               @endforeach
@@ -100,4 +101,4 @@
 
     </form>
   </div>
-@include('footer')
+@include('footer2')

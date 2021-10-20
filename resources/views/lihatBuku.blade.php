@@ -1,10 +1,12 @@
-@include('header')
+@include('header2')
 <div class="card-header">Pendaftaran Anggota Baru</div>
   <div class="card-body">
     <!-- lihat buku start -->
     <a class="btn btn-primary" href="{{ route('add_books') }}">+ Add Book Data</a>
-    <a class="btn btn-secondary" href="{{ route('add_category') }}">+ Add Book Category</a><br/><br />
+    <a class="btn btn-secondary" href="{{ route('add_category') }}">+ Add Book Category</a>
+    <a class="btn btn-danger btn-block" href="{{ route('petugasDashboard') }}">Kembali</a><br/><br/>
     <table class="table table-striped">
+      @if($buku->isNotEmpty())
       <tr>
         <th>idbuku</th>
         <th>isbn</th>
@@ -19,7 +21,6 @@
         <th>tersedia</th>
         <th>option</th>
       </tr>
-      @if($buku->isNotEmpty())
       @foreach( $buku as $book )
       <tr>
         <td>{{ $book->idbuku }}</td>
@@ -47,4 +48,4 @@
     </table>
     <!-- lihat buku end -->
   </div>
-@include('footer')
+@include('footer2')

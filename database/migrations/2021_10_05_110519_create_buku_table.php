@@ -11,7 +11,7 @@ class CreateBukuTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up() 
     {
         Schema::enableForeignKeyConstraints();
         Schema::create('buku', function (Blueprint $table) {
@@ -23,11 +23,13 @@ class CreateBukuTable extends Migration
             $table->string('penerbit');
             $table->string('kota_penerbit');
             $table->string('editor');
-            $table->binary('file_gambar');
+            $table->string('file_gambar');
             $table->timestamp('tgl_insert')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('tgl_update')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->integer('stok');
             $table->integer('stok_tersedia');
+
+            // $table->foreign('idkategori')->references('idkategori')->on('kategori');
         });
     }
 

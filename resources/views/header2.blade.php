@@ -12,12 +12,10 @@
   <!-- Local CSS -->
   <style media="screen">
     .error { color: #ff0000; }
-    /* .card { width: 1500px;} */
+    .card { width: 1500px;}
   </style>
   <title>Mini-Project : Perpustakaan</title>
 </head>
 <body>
-  <div class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-md-4">
-        <div class="card">
+  <div class="container mt-5 ms-5">
+    <div class="card">
