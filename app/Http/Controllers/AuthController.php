@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use Hash;
 use Session;
 use App\Models\User;
-use App\Models\Petugas;
-use App\Models\Anggota;
+use App\Models\petugas;
+use App\Models\anggota;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -82,7 +82,7 @@ class AuthController extends Controller
 
   public function bikinAnggota(array $data)
   {
-    return Anggota::create([
+    return anggota::create([
     'nim' => $data['nim'],
     'nama' => $data['name'],
     'password' => Hash::make($data['password']),
@@ -135,7 +135,7 @@ class AuthController extends Controller
   // PETUGAS
   public function bikinPetugas(array $data)
   {
-    return Petugas::create([
+    return petugas::create([
     'nama' => $data['name'],
     'password' => Hash::make($data['password']),
     ]);
@@ -145,7 +145,7 @@ class AuthController extends Controller
   public function petugasDashboard(){
     // $user = Auth::user();
     $nama = Auth::user()->name;
-    $petugas = Petugas::where('nama', $nama)->get();
+    $petugas = petugas::where('nama', $nama)->get();
     // return view('petugas_dashboard');
     // $user = DB::table('users')->get();
     return view('petugas_dashboard', ['petugas' => $petugas]);
