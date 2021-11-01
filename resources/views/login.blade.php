@@ -3,7 +3,28 @@
 <div class="card-body">
   <form method="POST" action="{{ route('masuk') }}">
     @csrf
-    <div class="form-group mb-3">
+    @if(session('errors'))
+		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+				Something it's wrong:
+				<ul>
+					@foreach ($errors->all() as $error)
+					<li>{{ $error }}</li>
+					@endforeach
+				</ul>
+			</div>
+			@endif
+			@if (Session::has('success'))
+			<div class="alert alert-success">
+				{{ Session::get('success') }}
+			</div>
+			@endif
+			@if (Session::has('error'))
+			<div class="alert alert-danger">
+				{{ Session::get('error') }}
+			</div>
+			@endif
+			
+	<div class="form-group mb-3">
       <input type="text" placeholder="Email" id="email" class="form-control" name="email" required
       autofocus>
       @if ($errors->has('email'))

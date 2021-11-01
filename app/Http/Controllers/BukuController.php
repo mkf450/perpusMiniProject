@@ -13,7 +13,9 @@ class BukuController extends Controller
   // SHOW BOOKS
   public function index()
   {
-    $buku = DB::table('buku')->get();
+    $buku = DB::table('buku')
+    ->join('kategori', 'buku.idkategori', '=', 'kategori.idkategori')
+    ->get();
     return view('lihatBuku', ['buku' => $buku]);
 
   }
@@ -63,11 +65,6 @@ class BukuController extends Controller
       return redirect()->route('add_books')->with('success',' Data buku berhasil ditambahkan!');
   }
 
-  // ADD CATEGORY
-  public function addCat(){
-    $kategori = DB::table('kategori')->get();
-    return view('tambahKategori', ['kategori' => $kategori]);
-  }
 
   public function cat(Request $request)
   {
@@ -93,23 +90,43 @@ class BukuController extends Controller
   }
 
   // SEARCH BOOKS
-  public function search(Request $request)
+  public function cari(Request $request)
   {
-    // $buku = DB::table('buku')->get();
-    // return view('cariDataBuku', ['buku' => $buku]);
-
-    // Get the search value from the request
     $search = $request->input('search');
 
-    // Search in the title and body columns from the posts table
     $buku = DB::table('buku')
+        ->join('kategori', 'buku.idkategori', '=', 'kategori.idkategori')
         ->where('judul', 'LIKE', "%{$search}%")
-        // ->orWhere('body', 'LIKE', "%{$search}%")
-        ->get();
-    // $posts = Post::query()
+        ->get(['buku.*', 'kategori.*']);
 
-    // Return the search view with the resluts compacted
-    return view('cariDataBuku', ['buku' => $buku]);
+    // return view('cariDataBuku', ['buku' => $buku]);
+    return view('cariBuku', compact('buku'));
+  }
+
+  public function search(Request $request)
+  {
+    $search = $request->input('search');
+
+    $buku = DB::table('buku')
+        ->join('kategori', 'buku.idkategori', '=', 'kategori.idkategori')
+        ->where('judul', 'LIKE', "%{$search}%")
+        ->get(['buku.*', 'kategori.*']);
+
+    //return view('cariDataBuku', ['buku' => $buku]);
+    return view('cariDataBuku', compact('buku'));
+  }
+
+  public function cariBuku(Request $request)
+  {
+    $cari = $request->input('cariBuku');
+
+    $buku = DB::table('buku')
+    ->join('kategori', 'buku.idkategori', '=', 'kategori.idkategori')
+    ->where('judul', 'LIKE', "%{$cari}%")
+    ->get(['buku.*', 'kategori.*']);
+
+    //return view('cariDataBukuPetugas', ['buku' => $buku]);
+    return view('cariDataBukuPetugas', compact('buku'));
   }
 
   // EDIT BOOK
@@ -161,6 +178,51 @@ class BukuController extends Controller
       } else {
         // redirect dengan pesan error
         return redirect()->route('view_books')->with(['error' => 'Data Gagal Dihapus!']);
+      }
+  }
+
+  // SHOW CATEGORY
+  public function viewcat()
+  {
+    $kategori = DB::table('kategori')->get();
+    return view('lihatKategori', ['kategori' => $kategori]);
+  }
+
+  // ADD CATEGORY
+  public function addCat(){
+    $kategori = DB::table('kategori')->get();
+    return view('tambahKategori', ['kategori' => $kategori]);
+  }
+
+  // EDIT CATEGORY
+  public function formEditCat($id)
+  {
+    $kategori = kategori::findOrFail($id);
+    return view('editKategori', ['kategori' => $kategori]);
+  }
+
+  public function editcat(Request $request, $id)
+  {
+    $kategori = kategori::find($id)->update($request->all());
+    return redirect()->route('view_category')->withSuccess('Data kategori telah diperbaharui');
+  }
+
+  // DELETE CATEGORY
+  public function formDeleteCat($id)
+  {
+    $kategori = kategori::findOrFail($id);
+    return view('hapusKategori', ['kategori' => $kategori]);
+  }
+
+  public function deletcat($id)
+  {
+      $kategori = kategori::findOrFail($id);
+      $kategori->delete();
+
+      if ($kategori) {
+        return redirect()->route('view_category')->withSuccess('Kategori berhasil dihapus');
+      } else {
+        return redirect()->route('view_category')->withErrors('Kategori gagal dihapus');
       }
   }
 }

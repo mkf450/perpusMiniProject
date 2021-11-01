@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
 
+  public function guest()
+  {
+    return view('dashboard');
+  }
+
   public function login()
   {
     return view('login');
@@ -67,7 +72,7 @@ class AuthController extends Controller
     $check = $this->bikinAnggota($data);
 
     // return redirect("dashboard")->withSuccess('You have signed-in');
-    return redirect("petugasDashboard");
+    return redirect("petugasDashboard")->withSuccess('Anggota berhasil didaftarkan');
   }
 
   public function create(array $data)
@@ -94,7 +99,11 @@ class AuthController extends Controller
   }
 
   public function anggotaDashboard(){
-    return view('anggota_dashboard');
+    // return view('anggota_dashboard');
+    $nama = Auth::user()->name;
+    $anggota = anggota::where('nama', $nama)->get();
+    return view('anggota_dashboard', ['anggota' => $anggota]);
+
   }
 
   // PETUGAS
@@ -118,7 +127,7 @@ class AuthController extends Controller
     $check = $this->bikinPetugas($data);
 
     // return redirect("dashboard")->withSuccess('You have signed-in');
-    return redirect("login");
+    return redirect("login")->withSuccess('Pendaftaran berhasil');
   }
 
   // PETUGAS

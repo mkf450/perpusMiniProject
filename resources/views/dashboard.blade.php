@@ -22,45 +22,18 @@
 <body>
   <nav class="navbar navbar-light navbar-expand-lg mb-5" style="background-color: #f8f8f8;">
     <div class="container">
-      <!-- <a class="navbar-brand mr-auto" href="#">PositronX</a> -->
-      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse w-100 order-3" id="navbarNav">
-        <ul class="navbar-nav" style="align-items: right">
-          @guest
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('login') }}">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('register-user') }}">Register</a>
-          </li>
-          @else
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('signout') }}">Logout</a>
-          </li>
-          @endguest
-        </ul>
-      </div> -->
-      <!-- <div class="container-fluid"> -->
       <!-- <img src="{{ asset('/assets/images/favicon.ico') }}" alt="Girl in a jacket" width="15px" height="18px" class="me-2">-->
       <a class="navbar-brand" href="#">
         <!-- <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">--> <b> Mini Project Perpus</b>
       </a>
       <div class="collapse navbar-collapse w-100 order-3 justify-content-end" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          @guest
           <li class="nav-item">
             <a class="nav-link" href="{{ route('login') }}">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('register-user') }}">Register</a>
+            <a class="nav-link" href="{{ route('petugas_regis') }}">Register</a>
           </li>
-          @else
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('signout') }}">Logout</a>
-          </li>
-          @endguest
         </ul>
       </div>
       <!-- </div> -->
@@ -72,8 +45,8 @@
       <div class="col-12 row">
         <!-- isi -->
         <h3 class="mt-4 mb-2">List Fitur</h3>
-        <p>Perpustakaan</p>
-        
+        <p>Perpustakaan (Guest Mode)</p>
+
         @if(session('errors'))
 			<div class="alert alert-danger alert-dismissible fade show" role="alert">
 				Something it's wrong:
@@ -97,19 +70,10 @@
 				{{ Session::get('error') }}
 			</div>
 			@endif
-        
+
         <div class="mt-4 mx-2 card col-4">
-          <p style="font-size: 16px" class="px-2 py-2"><a style="text-decoration: none; color: #121212" href="{{ route('search') }}">Pencarian buku</a></p>
+          <p style="font-size: 16px" class="px-2 py-2"><a style="text-decoration: none; color: #121212" href="{{ route('cari') }}">Pencarian buku</a></p>
         </div>
-        <!-- <div class="mt-4 mx-2 card col-4">
-          <p style="font-size: 16px" class="px-2 py-2"><a style="text-decoration: none; color: #121212" href="">Daftar buku yang sedang dipinjam</a></p>
-        </div> -->
-        <div class="mt-4 mx-2 card col-4">
-          @foreach( $anggota as $user )
-          <p style="font-size: 16px" class="px-2 py-2"><a style="text-decoration: none; color: #121212" href="buku_anggota/{{ $user->nim }}">Daftar buku yang sedang dipinjam</a></p>
-          @endforeach
-        </div>
-        <!-- isi -->
       </div>
     </div>
   </div>

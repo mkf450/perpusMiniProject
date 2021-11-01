@@ -41,14 +41,14 @@
             <input type="text" name="judul" id="judul" class="form-control" value="{{ $buku->judul }}" required/><br>
           </div>
         </div>
-        <!-- <div class="form-group row">
+        <div class="form-group row">
           <label for="password" class="col-sm-2 col-form-label">Kategori : </label>
           <div class="col-sm-10">
             <select style="color: #707070" name="kategori" class="form-control">
-              <option value="{{ $buku->idkategori }}">{{ $buku->idkategori }}</option>
+              <option value="{{ $buku->idkategori }}">{{ $buku->idkategori }}</option
             </select><br>
           </div>
-        </div> -->
+        </div>
         <div class="form-group row">
           <label for="pengarang" class="col-sm-2 col-form-label">Pengarang : </label>
           <div class="col-sm-10">
@@ -86,9 +86,9 @@
           </div>
         </div>
         <div class="form-group row">
-          <label for="tersedia" class="col-sm-2 col-form-label">Tersedia : </label>
+          <label for="stok_tersedia" class="col-sm-2 col-form-label">Tersedia : </label>
           <div class="col-sm-10">
-            <input type="number" name="tersedia" id="tersedia" class="form-control" value="{{ $buku->stok_tersedia }}" required/><br>
+            <input type="number" name="stok_tersedia" id="stok_tersedia" class="form-control" value="{{ $buku->stok_tersedia }}" required/><br>
           </div>
         </div>
         <button type="submit" value="submit" class="btn btn-primary">Ubah</button>

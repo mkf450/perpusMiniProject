@@ -1,7 +1,7 @@
 @include('header2')
-<div class="card-header">Cari Data Buku Anggota</div>
+<div class="card-header">Cari Data Buku</div>
   <div class="card-body">
-    <form action="{{ route('search') }}" method="get">
+    <form action="{{ route('cari') }}" method="get">
       <!-- SERACH START -->
       <table class="table table-striped">
         <div class="form-group row">
@@ -10,7 +10,7 @@
           </div>
           <div class="col-sm-2">
             <button type="submit" class="btn btn-primary">Search</button>
-            <a class="btn btn-danger btn-block" href="{{ route('anggotaDashboard') }}">Kembali</a>
+            <a class="btn btn-danger btn-block" href="{{ route('guest') }}">Kembali</a>
           </div>
         </div>
         @if($buku->isNotEmpty())

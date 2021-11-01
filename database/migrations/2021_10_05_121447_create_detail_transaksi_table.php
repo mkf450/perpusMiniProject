@@ -16,7 +16,7 @@ class CreateDetailTransaksiTable extends Migration
         Schema::create('detail_transaksi', function (Blueprint $table) {
             $table->unsignedBigInteger('idtransaksi');
             $table->unsignedBigInteger('idbuku');
-            $table->timestamp('tgl_kembali')->default(\DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('tgl_kembali')->nullable();
             $table->integer('denda');
         });
 

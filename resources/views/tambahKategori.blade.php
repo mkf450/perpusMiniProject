@@ -36,7 +36,7 @@
           </div>
         </div>
         <button type="submit" class="btn btn-primary">Add</button>
-        <a class="btn btn-secondary ms-2" href="{{ route('view_books') }}">Back</a>
+        <a class="btn btn-secondary ms-2" href="{{ route('view_category') }}">Back</a>
       </table>
       <!-- ADD BUKU END -->
 
