@@ -16,9 +16,9 @@ class anggota extends Model
       'email',
       'no_telp',
   ];
-  
+
   protected $table = 'anggota';
   protected $primaryKey = 'nim';
-  public $timestamps = false;
+  // public $timestamps = false;
   use HasFactory;
 }

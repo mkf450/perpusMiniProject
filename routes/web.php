@@ -71,6 +71,8 @@ Route::get('buku_anggota/{id}', 'PinjamanController@buku_anggota')->name('buku_a
 Route::get('pengembalian_buku', 'PinjamanController@form_kembali')->name('form_kembali');
 Route::post('pengembalian_buku', 'PinjamanController@pengembalian_buku');
 
+Route::get('showAnggota', 'AuthController@showAnggota');
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });

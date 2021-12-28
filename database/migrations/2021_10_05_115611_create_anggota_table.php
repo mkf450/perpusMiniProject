@@ -21,6 +21,7 @@ class CreateAnggotaTable extends Migration
           $table->string('kota');
           $table->string('email')->unique();
           $table->string('no_telp');
+          // $table->timestamps();
         });
     }
 

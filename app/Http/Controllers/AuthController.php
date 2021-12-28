@@ -180,7 +180,10 @@ class AuthController extends Controller
   // }
 
 
-
+  public function showAnggota(){
+    $anggota = anggota::all();
+    return ($anggota);
+  }
 
   public function signout() {
     Session::flush();
